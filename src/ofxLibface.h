@@ -16,7 +16,9 @@ class ofxLibface {
 private:
     vector<ofRectangle> faces;
     libface::LibFace _libface;
+    
 public:
+    ofxLibface() : _libface(libface::ALL, ".",  ofToDataPath("haarcascades")) {}
     void findFaces(ofPixelsRef pixels);
     int  size();
     vector<ofRectangle> getFaces();
